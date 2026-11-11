@@ -1,0 +1,510 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-surface: #ffffff;
+    --border-subtle: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Professional solid neutral background (zero gradients, clean & crisp) */
+.bento-outer-backdrop {
+  background-color: #f8fafc;
+}
+
+.dark .bento-outer-backdrop {
+  background-color: #090d16;
+}
+
+/* Clean professional solid card tokens matching the reference UI (zero gradients, clean & crisp) */
+.bg-pastel-mint {
+  background-color: #d9f2e6;
+  color: #0b3b2c;
+  border: 1px solid rgba(167, 243, 208, 0.6);
+}
+.bg-pastel-pink {
+  background-color: #fde2e8;
+  color: #4a044e;
+  border: 1px solid rgba(251, 207, 232, 0.6);
+}
+.bg-pastel-yellow {
+  background-color: #fef0c7;
+  color: #451a03;
+  border: 1px solid rgba(253, 230, 138, 0.6);
+}
+.bg-pastel-lilac {
+  background-color: #ebe7fd;
+  color: #2e1065;
+  border: 1px solid rgba(221, 214, 254, 0.6);
+}
+.bg-pastel-sky {
+  background-color: #e0f2fe;
+  color: #0c4a6e;
+  border: 1px solid rgba(186, 230, 253, 0.6);
+}
+.bg-pastel-schedule {
+  background-color: #eaf6f0;
+  color: #0b3b2c;
+  border: 1px solid rgba(167, 243, 208, 0.6);
+}
+
+/* Dark mode professional solid card tokens */
+.dark .bg-pastel-mint {
+  background-color: #133025;
+  color: #a7f3d0;
+  border-color: #1c4b3a;
+}
+.dark .bg-pastel-pink {
+  background-color: #341824;
+  color: #fbcfe8;
+  border-color: #4c2235;
+}
+.dark .bg-pastel-yellow {
+  background-color: #332509;
+  color: #fde68a;
+  border-color: #4d380e;
+}
+.dark .bg-pastel-lilac {
+  background-color: #251d3a;
+  color: #ddd6fe;
+  border-color: #382c58;
+}
+.dark .bg-pastel-sky {
+  background-color: #0c2d48;
+  color: #bae6fd;
+  border-color: #13426b;
+}
+.dark .bg-pastel-schedule {
+  background-color: #152f24;
+  color: #a7f3d0;
+  border-color: #1f4535;
+}
+
+/* Clean circular action button matching reference */
+.bento-circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+.bento-circle-btn:hover {
+  transform: scale(1.08);
+  background-color: #0f172a;
+  color: #ffffff;
+}
+.dark .bento-circle-btn {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+.dark .bento-circle-btn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Clean professional action button */
+.bento-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.5rem;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s ease-in-out;
+}
+.bento-arrow-btn:hover {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.dark .bento-arrow-btn {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+.dark .bento-arrow-btn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+}
+
+/* ============================================================================
+   DUOLINGO-STYLE GAMIFIED TACTILE TEXTURES & 3D PRESSABLE DEPTH
+   ============================================================================ */
+
+/* Duolingo Chunky 3D Green Button */
+.duo-btn-green {
+  background-color: #22c55e;
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 1rem;
+  border-bottom: 4px solid #15803d;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.duo-btn-green:hover {
+  background-color: #16a34a;
+}
+.duo-btn-green:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+/* Duolingo Chunky 3D Sky Button */
+.duo-btn-sky {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 1rem;
+  border-bottom: 4px solid #0369a1;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.duo-btn-sky:hover {
+  background-color: #0284c7;
+}
+.duo-btn-sky:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+/* Duolingo Chunky 3D Yellow/Gold Button */
+.duo-btn-yellow {
+  background-color: #eab308;
+  color: #713f12;
+  font-weight: 800;
+  border-radius: 1rem;
+  border-bottom: 4px solid #a16207;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.duo-btn-yellow:hover {
+  background-color: #ca8a04;
+}
+.duo-btn-yellow:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+/* Duolingo Chunky 3D Indigo Button */
+.duo-btn-indigo {
+  background-color: #6366f1;
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 1rem;
+  border-bottom: 4px solid #4338ca;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.duo-btn-indigo:hover {
+  background-color: #4f46e5;
+}
+.duo-btn-indigo:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+/* Duolingo Tactile White/Neutral Surface Button */
+.duo-btn-white {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 800;
+  border-radius: 1rem;
+  border: 2px solid #e2e8f0;
+  border-bottom: 4px solid #cbd5e1;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.duo-btn-white:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  border-bottom-color: #94a3b8;
+}
+.duo-btn-white:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+.dark .duo-btn-white {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+  border-bottom-color: #0f172a;
+}
+.dark .duo-btn-white:hover {
+  background-color: #334155;
+}
+.dark .duo-btn-white:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Duolingo 3D Tactile Card Container */
+.duo-card {
+  border: 2px solid #e2e8f0;
+  border-bottom: 4px solid #cbd5e1;
+  border-radius: 1.5rem;
+  transition: all 0.15s ease-in-out;
+}
+.dark .duo-card {
+  border-color: #334155;
+  border-bottom-color: #0f172a;
+}
+
+/* Duolingo Stepping Stone Milestone Node */
+.duo-node {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.duo-node:active {
+  transform: translateY(4px);
+  border-bottom-width: 1px;
+}
+
+/* Subtle XP Pop celebration animation */
+@keyframes xp-float {
+  0% { transform: translateY(0) scale(0.9); opacity: 0; }
+  50% { transform: translateY(-8px) scale(1.05); opacity: 1; }
+  100% { transform: translateY(-16px) scale(1); opacity: 0; }
+}
+.animate-xp-float {
+  animation: xp-float 1.2s ease-out forwards;
+}
+
+/* Duolingo Chunky Input Fields */
+.duo-input {
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+.duo-input:focus {
+  border-color: #38bdf8;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.dark .duo-input {
+  border-color: #334155;
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+.dark .duo-input:focus {
+  border-color: #38bdf8;
+  background-color: #0f172a;
+}
+
+/* Smooth sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* ============================================================================
+   COMPY MASCOT DYNAMIC MOVEMENTS & ANIMATED MOMENTS
+   ============================================================================ */
+
+/* 1. Idle Gentle Breathing & Floating (Living Character Feel) */
+@keyframes compy-idle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+.animate-compy-idle {
+  animation: compy-idle 3.2s ease-in-out infinite;
+}
+
+/* 2. Natural Organic Eye Blink */
+@keyframes compy-blink {
+  0%, 88%, 94%, 100% {
+    transform: scaleY(1);
+  }
+  91% {
+    transform: scaleY(0.12);
+  }
+}
+.animate-compy-blink {
+  transform-origin: 50% 45%;
+  animation: compy-blink 4.2s ease-in-out infinite;
+}
+
+/* 3. Waving Arm & Cheerful Body Tilt */
+@keyframes compy-arm-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-26deg);
+  }
+  75% {
+    transform: rotate(18deg);
+  }
+}
+.animate-compy-arm {
+  transform-origin: 10px 42px;
+  animation: compy-arm-wave 0.75s ease-in-out infinite;
+}
+
+@keyframes compy-body-wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+.animate-compy-waving {
+  animation: compy-body-wave 1.5s ease-in-out infinite;
+}
+
+/* 4. Celebratory Joyful Bounce & Squash-Stretch */
+@keyframes compy-celebrate-jump {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  20% {
+    transform: translateY(2px) scale(1.12, 0.88);
+  }
+  48% {
+    transform: translateY(-14px) scale(0.92, 1.1) rotate(4deg);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.05, 0.95) rotate(-2deg);
+  }
+}
+.animate-compy-celebrating {
+  animation: compy-celebrate-jump 1.05s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+}
+
+/* 5. Sparkle Star Twinkle */
+@keyframes compy-sparkle {
+  0%, 100% {
+    transform: scale(0.75) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 1;
+  }
+}
+.animate-compy-sparkle {
+  transform-origin: center;
+  animation: compy-sparkle 1.3s ease-in-out infinite;
+}
+
+/* 6. Thoughtful Head Tilt & Magnetic Needle Twitch */
+@keyframes compy-thinking-tilt {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  35% {
+    transform: rotate(7deg) translateY(-2px);
+  }
+  70% {
+    transform: rotate(-4deg) translateY(-1px);
+  }
+}
+.animate-compy-thinking {
+  animation: compy-thinking-tilt 3.2s ease-in-out infinite;
+}
+
+@keyframes compy-needle-twitch {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  35% {
+    transform: rotate(-12deg);
+  }
+  55% {
+    transform: rotate(6deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+.animate-compy-needle {
+  transform-origin: 50px 22px;
+  animation: compy-needle-twitch 2.5s ease-in-out infinite;
+}
+
+/* 7. Cheerful Speech Bubble Elastic Pop-In */
+@keyframes compy-bubble-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateY(6px);
+  }
+  70% {
+    transform: scale(1.04) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-compy-bubble {
+  animation: compy-bubble-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 8. Interactive Click Wiggle Bounce */
+@keyframes compy-click-wiggle {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.2, 0.8) translateY(4px); }
+  45% { transform: scale(0.88, 1.18) translateY(-10px) rotate(8deg); }
+  70% { transform: scale(1.08, 0.94) translateY(-2px) rotate(-4deg); }
+  100% { transform: scale(1) translateY(0) rotate(0deg); }
+}
+.animate-compy-click {
+  animation: compy-click-wiggle 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
